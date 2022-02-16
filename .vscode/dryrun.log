@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/yasin/workspace/demo/Kong'
+docker build --no-cache --build-arg KONG_VERSION=latest -t atez/kong:latest image
+make: Leaving directory `/Users/yasin/workspace/demo/Kong'
+ 
