@@ -1,10 +1,9 @@
-include .env
+kong-postgres:
+	COMPOSE_PROFILES=database KONG_DATABASE=postgres docker-compose up -d
 
-.PHONY : kong start
-
-start :
+kong-dbless:
 	docker-compose up -d
 
-#kong :
-#	docker build --no-cache --build-arg KONG_VERSION=$(KONG_VERSION) -t atez/kong:$(KONG_VERSION) image
-
+clean:
+	docker-compose kill
+	docker-compose rm -f
